@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Truly Indian</title>
+    <link rel="stylesheet" href="/style-home.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Truly Indian</h1>
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/submit-place/user-input.html" target="_blank"
+          >Add Your Place</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <h1>Where to next?</h1>
+        <h2>Explore the newest places shared by travelers like you!</h2>
+      </div>
+
+      <section class="destinations">
+        <% for (const state in grouped) { const places = grouped[state]; const
+        preview = places[0]; %>
+        <article>
+          <a href="/<%= state %>">
+            <img src="<%= preview.imageUrl %>" alt="<%= state %>" />
+            <p><strong><%= state %></strong></p>
+          </a>
+        </article>
+        <% } %>
+      </section>
+    </main>
+
+    <footer>
+      <section class="Rights">
+        <p>&copy; 2025 Truly Indian by ObiWanKelp. All rights reserved.</p>
+        <p>
+          <a href="privacy.html" target="_blank">Privacy Policy</a> |
+          <a href="terms.html" target="_blank">Terms & Conditions</a>
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>

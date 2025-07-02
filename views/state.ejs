@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= state %></title>
+    <link rel="stylesheet" href="/states.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Truly Indian</h1>
+
+      <h2><%= state %></h2>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/submit-place/user-input.html" target="_blank"
+          >Add Your Place</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <h1><%= state %></h1>
+        <h2>Explore the magic of <%= state %></h2>
+      </div>
+
+      <section class="places-section">
+        <% if (places.length === 0) { %>
+        <p>No places submitted for <%= state %> yet.</p>
+        <% } else { %> <% places.forEach(place => { %>
+        <article>
+          <img src="<%= place.imageUrl %>" width="350" alt="place" />
+          <p><strong><%= place.location %>, <%= place.state %></strong></p>
+          <p><%= place.description %></p>
+        </article>
+        <% }) %> <% } %>
+      </section>
+    </main>
+
+    <footer class="Rights">
+      <p>&copy; 2025 Truly Indian by ObiWanKelp. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

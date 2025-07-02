@@ -1,0 +1,213 @@
+/* ===== IMPORT FONTS ===== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Limelight&family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap");
+
+/* ===== ROOT THEME VARIABLES ===== */
+:root {
+  --bg-gradient: linear-gradient(135deg, #fce3ec, #f9f6f7, #e0c3fc);
+  --text-color: #333;
+  --card-bg: #ffffffee;
+  --header-bg: #b19cd9;
+  --footer-bg: #22223b;
+  --footer-text: #ffffff;
+  --link-hover: #ff6b6b;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --card-radius: 15px;
+}
+
+/* ===== GLOBAL LAYOUT ===== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ===== HEADER ===== */
+header h1,
+header h2 {
+  background-color: var(--header-bg);
+  color: white;
+  margin: 0;
+  padding: 15px 20px;
+  text-align: left;
+  box-shadow: var(--box-shadow);
+}
+
+header h1 {
+  font-family: "Limelight", cursive;
+  font-size: 32px;
+}
+
+header h2 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--header-bg);
+  padding: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 8px 12px;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+header nav a:hover {
+  transform: scale(1.1);
+  color: var(--link-hover);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px;
+  background: transparent;
+}
+
+.hero h1 {
+  font-family: "Emilys Candy", cursive;
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.hero h2 {
+  font-family: "Texturina", serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* ===== PLACES GRID ===== */
+.places-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+}
+
+.places-section article {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--box-shadow);
+  width: 300px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.places-section article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.places-section article img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.places-section article img:hover {
+  transform: scale(1.05);
+}
+
+.places-section article p {
+  font-family: "Texturina", serif;
+  font-size: 16px;
+  margin-top: 10px;
+  color: var(--text-color);
+}
+
+.places-section article p strong {
+  font-family: "Emilys Candy", serif;
+  font-size: 20px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  width: 100%;
+  margin-top: auto;
+}
+
+.Rights {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.Rights a {
+  color: var(--link-hover);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.Rights a:hover {
+  color: white;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .places-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .places-section article {
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
+  header h2 {
+    font-size: 18px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero h2 {
+    font-size: 16px;
+  }
+
+  .Rights {
+    font-size: 12px;
+  }
+}
